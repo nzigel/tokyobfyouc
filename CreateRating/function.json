@@ -1,0 +1,29 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "ratingsDocument",
+      "databaseName": "ohtokyo",
+      "collectionName": "bfyouc",
+      "createIfNotExists": false,
+      "connectionStringSetting": "ohtokyobfyouc_DOCUMENTDB",
+      "direction": "out"
+    }
+  ]
+}
