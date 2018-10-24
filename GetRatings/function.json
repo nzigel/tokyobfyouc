@@ -1,0 +1,29 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "documents",
+      "type": "cosmosDB",
+      "direction": "in",
+      "databaseName": "ohtokyo",
+      "collectionName": "bfyouc",
+      "sqlQuery": "SELECT * from c where c.userId = {userId}",
+      "connectionStringSetting": "ohtokyobfyouc_DOCUMENTDB"
+    }
+  ]
+}
