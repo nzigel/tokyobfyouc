@@ -69,7 +69,8 @@ module.exports = async function (context, req) {
                 "timestamp": new Date().toISOString(),
                 "locationName": req.body.locationName,
                 "rating": req.body.rating,
-                "userNotes": req.body.userNotes
+                "userNotes": req.body.userNotes,
+                "extrafiled": "tokyo"
             }
 
             context.bindings.ratingsDocument = docObj;
