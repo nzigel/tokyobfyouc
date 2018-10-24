@@ -13,12 +13,8 @@ module.exports = async function (context, req) {
    else {
         var statusCode = 200;
         var bodyStr = "";
-        var validUser = false;
-        var validProduct = false;
-        var validNum = true;
         
         if (!Number.isInteger(req.body.rating) || req.body.rating<0 || req.body.rating>5) {
-            validNum = false;
             statusCode = 422;
             bodyStr+='Please provide a numeric rating between 0 and 5\n';
         }
@@ -36,7 +32,6 @@ module.exports = async function (context, req) {
                 json: true // Automatically parses the JSON string in the response
             };
             user = await rp(usrOptions);
-            validUser = true;
             console.log('User name', user.userName);
         }
         catch(err){
@@ -57,7 +52,6 @@ module.exports = async function (context, req) {
                 json: true // Automatically parses the JSON string in the response
             };
             product = await rp(productOptions);
-            validProduct = true;
             console.log('productName', product.productName);
             console.log('productDescription', product.productDescription);
         }
@@ -66,9 +60,10 @@ module.exports = async function (context, req) {
             bodyStr+='Invalid ProductId : ' + req.body.productId+'\n'     
         }
 
-        if (validNum && validUser && validProduct) {
+        if (statusCode==200) {
+            // we have a valid number for rating and have matched userId and productId
             var docObj = {
-                "id": uuidv4(),
+                "id": uuidv4(), // create the Guid here rather than automatically in Cosmos DB so it can be returned in the json from the service call.
                 "userId": req.body.userId,
                 "productId": req.body.productId,
                 "timestamp": new Date().toISOString(),
@@ -78,7 +73,6 @@ module.exports = async function (context, req) {
             }
 
             context.bindings.ratingsDocument = docObj;
-            statusCode = 200;
             bodyStr = context.bindings.ratingsDocument;
         }
 
