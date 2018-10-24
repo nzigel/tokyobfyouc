@@ -17,13 +17,13 @@
       "name": "res"
     },
     {
-      "name": "documents",
       "type": "cosmosDB",
-      "direction": "in",
-      "databaseName": "ohtokyo",
-      "collectionName": "bfyouc",
-      "sqlQuery": "SELECT * from c where c.userId = {userId}",
-      "connectionStringSetting": "ohtokyobfyouc_DOCUMENTDB"
+      "name": "ratingDocument",
+      "databaseName": "ratingDatabase",
+      "collectionName": "RatingCollection",
+      "connectionStringSetting": "acc-koyu_DOCUMENTDB",
+      "sqlQuery": "SELECT * from c where c.userId= {userId}",
+      "direction": "in"
     }
   ]
 }

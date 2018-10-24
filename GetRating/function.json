@@ -18,10 +18,10 @@
     },
     {
       "type": "cosmosDB",
-      "name": "ratingsDocument",
-      "databaseName": "ohtokyo",
-      "collectionName": "bfyouc",
-      "connectionStringSetting": "ohtokyobfyouc_DOCUMENTDB",
+      "name": "ratingDocument",
+      "databaseName": "ratingDatabase",
+      "collectionName": "RatingCollection",
+      "connectionStringSetting": "acc-koyu_DOCUMENTDB",
       "direction": "in",
       "Id": "{Query.id}"
     }
