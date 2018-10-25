@@ -1,3 +1,5 @@
+var helper = require('../helper');
+
 module.exports = async function (context, req, ratingsDocument) {
     if (!ratingsDocument)
     {
@@ -8,17 +10,8 @@ module.exports = async function (context, req, ratingsDocument) {
     }
     else
     {
-        outputDocument = {
-            "id": ratingsDocument.id,
-            "userId": ratingsDocument.userId,
-            "productId": ratingsDocument.productId,
-            "timestamp": ratingsDocument.timestamp,
-            "locationName": ratingsDocument.locationName,
-            "rating": ratingsDocument.rating,
-            "userNotes": ratingsDocument.userNotes
-        }
         context.res = {
-            body: outputDocument
+            body: helper.stripInternalProperties(ratingsDocument)
         };
     }
 };

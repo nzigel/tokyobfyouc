@@ -22,7 +22,7 @@ module.exports = async function (context, req) {
         try
         {
             var usrOptions = {
-                uri: 'https://serverlessohlondonuser.azurewebsites.net/api/GetUser',
+                uri: process.env["GETUSERURI"],
                 qs: {
                     userId: req.body.userId // -> uri + '?key=value'
                 },
@@ -42,7 +42,7 @@ module.exports = async function (context, req) {
         try
         {
             var productOptions = {
-                uri: 'https://serverlessohlondonproduct.azurewebsites.net/api/GetProduct',
+                uri: process.env["GETPRODUCTURI"],
                 qs: {
                     productId: req.body.productId // -> uri + '?key=value'
                 },

@@ -1,0 +1,14 @@
+// Rename to local.settings.json and add your Document DB Key and name and collection name
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "DOCUMENTDBKEY": "",
+    "DOCUMENTDBNAME": "",
+    "COLLECTIONNAME": "",
+    "GETUSERURI": "https://serverlessohuser.trafficmanager.net/api/GetUser",
+    "GETPRODUCTURI": "https://serverlessohproduct.trafficmanager.net/api/GetProduct",
+    "GETPRODUCTSURI": "https://serverlessohproduct.trafficmanager.net/api/GetProducts"
+  }
+}
