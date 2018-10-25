@@ -9,7 +9,7 @@
       "methods": [
         "get"
       ],
-      "route": "sampleproduct/{productId:guid}"
+      "route": "sample/product/{productId:guid}"
     },
     {
       "type": "http",

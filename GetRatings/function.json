@@ -9,7 +9,7 @@
       "methods": [
         "get"
       ],
-      "route": "userRatings/{userId:guid}"
+      "route": "user/ratings/{userId:guid}"
     },
     {
       "type": "http",
