@@ -7,6 +7,13 @@
           "route": "/CreateRating"
       },
       "backendUri": "https://koyu-api-managament.azure-api.net/koyu-production"
-  }
+    },
+    "proxy2": {
+      "matchCondition": {
+          "methods": [ "GET" ],
+          "route": "/GetRating"
+      },
+      "backendUri": "https://koyu-api-managament.azure-api.net/koyu-production"
+    }
   }
 }
