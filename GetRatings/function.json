@@ -7,9 +7,9 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
-        "post"
-      ]
+        "get"
+      ],
+      "route": "user/ratings/{userId:guid}"
     },
     {
       "type": "http",
@@ -20,10 +20,10 @@
       "name": "documents",
       "type": "cosmosDB",
       "direction": "in",
-      "databaseName": "ohtokyo",
-      "collectionName": "bfyouc",
-      "sqlQuery": "SELECT * from c where c.userId = {userId}",
-      "connectionStringSetting": "ohtokyobfyouc_DOCUMENTDB"
+      "databaseName": "%DOCUMENTDBNAME%",
+      "collectionName": "%COLLECTIONNAME%",
+      "sqlQuery": "SELECT * from c where c.userId = {userId:guid}",
+      "connectionStringSetting": "DOCUMENTDBKEY"
     }
   ]
 }
