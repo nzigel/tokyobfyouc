@@ -1,10 +1,10 @@
 module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+    var productId = context.bindingData.productId;
 
-    if (req.query.productId || (req.body && req.body.productId)) {
+    if (productId) {
         context.res = {
             // status: 200, /* Defaults to 200 */
-            body: "The product name for your product id " + (req.query.productId || req.body.productId)+" is Starfruit Explosion"
+            body: "The product name for your product id " +productId+" is Starfruit Explosion"
         };
     }
     else {

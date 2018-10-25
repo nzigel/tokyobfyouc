@@ -7,9 +7,9 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
-        "post"
-      ]
+        "get"
+      ],
+      "route": "userRatings/{userId:guid}"
     },
     {
       "type": "http",
@@ -22,7 +22,7 @@
       "direction": "in",
       "databaseName": "ohtokyo",
       "collectionName": "bfyouc",
-      "sqlQuery": "SELECT * from c where c.userId = {userId}",
+      "sqlQuery": "SELECT * from c where c.userId = {userId:guid}",
       "connectionStringSetting": "ohtokyobfyouc_DOCUMENTDB"
     }
   ]

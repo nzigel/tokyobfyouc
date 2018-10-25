@@ -46,7 +46,7 @@ module.exports = async function (context, req) {
     else {
         context.res = {
             status: 422,
-            body: "No ratings found for user "+req.query.userId
+            body: "No ratings found for user "+req.params.userId
         }
     }
 };

@@ -3,7 +3,7 @@ module.exports = async function (context, req, ratingsDocument) {
     {
         context.res = {
             status: 422,
-            body: "No rating found with id "+req.query.id
+            body: "No rating found with id "+req.params.id
         }
     }
     else
